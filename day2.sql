@@ -47,7 +47,7 @@ where not city = '서울';
 # todo: 카테고리 id(category_id)가 1 또는 2이고 가격(price)이 15,000원 이상인 제품을 조회하세요.
 select *
 from products
-where category_id = 1 or category_id = 2 and price >= 15000
+where (category_id = 1 or category_id = 2) and price >= 15000
 order by price desc;
 # todo: 서울 또는 부산에 위치하며 우편번호(postal_code)가 '0'으로 시작하는 고객을 조회하세요.
 select *
@@ -111,7 +111,7 @@ where product_name like '%김%' and price >= 10000;
 # todo: 고객명(customer_name)이 '마트' 또는 '슈퍼'로 끝나고, 서울 또는 부산에 위치한 고객을 조회하세요.
 select *
 from customers
-where customer_name like '%마트' or customer_name like '%슈퍼' and city in ('서울', '부산');
+where (customer_name like '%마트' or customer_name like '%슈퍼') and city in ('서울', '부산');
 # todo: 2023년 7월에 주문되고, 배송업체 id(shipper_id)가 1인 모든 주문에 대해 주문 id(order_id)와 주문일(order_date)을
 # 조회하세요.
 select order_id, order_date
